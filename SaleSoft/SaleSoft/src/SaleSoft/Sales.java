@@ -10,14 +10,14 @@ public class Sales {
 	
 	void item(String name, int price, int qtySold, int totCost, int data, int time) {
 		this.name = name;
-		this.price = prise;
-		this.qtySold = QtySold;
-		this.totCost = Totcost;
+		this.price = price;
+		this.qtySold = qtySold;
+		this.totCost = totCost;
 		this.data = data;
 		this.time = time;
 	}
 	
 	public String toString() {
-		return "Name: " + name + "Price: " + Price + "Quantity Sold: " + qtySold + "Total Cost: " + totcost + "Data: " + data + "Time: " + time;	
+		return "Name: " + name + "Price: " + price + "Quantity Sold: " + qtySold + "Total Cost: " + totCost + "Data: " + data + "Time: " + time;	
 	}
 }
