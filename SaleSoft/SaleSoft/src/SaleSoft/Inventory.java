@@ -1,28 +1,20 @@
 package SaleSoft;
 
 public class Inventory {
-private String name;
-	private int Stock;
-	private int LowStockwarning;
-	private int Prise;
+	private String name;
+	private int stock;
+	private int lowStockWarning;
+	private int price;
 
-	
-	void item() {
-		name = "";
-		Prise = 0;
-		Stock = 0;
-		LowStockwarning = 0;
-	}
-	
-	void item(String name, int prise, int Stock, int LowStockwarning) {
+	void item(String name, int price, int stock, int lowStockWarning) {
 		this.name = name;
-		this.Prise = prise;
-		this.Stock = Stock;
-		this.LowStockwarning = LowStockwarning;
+		this.price = price;
+		this.stock = stock;
+		this.lowStockWarning = lowStockWarning;
 		
 	}
 	
 	public String toString() {
-		return "Name: " + name + "Prise: " + Prise + "Low Stock Warning" + LowStockwarning + "Stock" + Stock;	
+		return "Name: " + name + "Price: " + price + "Low Stock Warning: " + lowStockWarning + "Stock: " + stock;	
 	}
 }
