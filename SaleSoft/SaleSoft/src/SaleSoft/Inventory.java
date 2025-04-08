@@ -4,17 +4,16 @@ public class Inventory {
 	private String name;
 	private int stock;
 	private int lowStockWarning;
-	private int price;
+	private double price;
 
-	void item(String name, int price, int stock, int lowStockWarning) {
+	public Inventory(String name, int stock, int lowStockWarning, double price) {
 		this.name = name;
-		this.price = price;
 		this.stock = stock;
 		this.lowStockWarning = lowStockWarning;
-		
+		this.price = price;
 	}
 	
 	public String toString() {
-		return "Name: " + name + "Price: " + price + "Low Stock Warning: " + lowStockWarning + "Stock: " + stock;	
+		return "Name: " + name + "Low Stock Warning: " + lowStockWarning + "Stock: " + stock + "Price: " + price ;	
 	}
 }

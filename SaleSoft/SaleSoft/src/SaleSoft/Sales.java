@@ -8,7 +8,7 @@ public class Sales {
 	private int data;
 	private int time;
 	
-	void item(String name, int price, int qtySold, int totCost, int data, int time) {
+	public Sales(String name, int price, int qtySold, int totCost, int data, int time) {
 		this.name = name;
 		this.price = price;
 		this.qtySold = qtySold;
