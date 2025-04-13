@@ -1,23 +1,26 @@
 package SaleSoft;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Sales {
-	private String name;
-	private int price;
-	private int qtySold;
-	private int totCost;
-	private int data;
-	private int time;
+	public String name;
+	public int price;
+	public int qtySold;
+	public int totCost;
+	public int date;
+	public int time;
 	
-	public Sales(String name, int price, int qtySold, int totCost, int data, int time) {
+	public Sales(String name, int price, int qtySold, int totCost, int date, int time) {
 		this.name = name;
 		this.price = price;
 		this.qtySold = qtySold;
 		this.totCost = totCost;
-		this.data = data;
+		this.date = date;
 		this.time = time;
 	}
 	
 	public String toString() {
-		return "Name: " + name + "Price: " + price + "Quantity Sold: " + qtySold + "Total Cost: " + totCost + "Data: " + data + "Time: " + time;	
+		return "Name: " + name + "Price: " + price + "Quantity Sold: " + qtySold + "Total Cost: " + totCost + "Date: " + date + "Time: " + time;	
 	}
 }
