@@ -221,6 +221,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		// Remove Product
 		if (e.getSource() == removeProd) {
 			System.out.println("Remove Product");
+			new RemoveProduct();
 		}
 
 		// Adjust Stock
