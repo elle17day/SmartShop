@@ -209,6 +209,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		// Add Product
 		if (e.getSource() == addProd) {
 			System.out.println("Add Product");
+			new ProductInput();
 		}
 
 		// Edit Product
@@ -240,7 +241,6 @@ public class ButtonBar extends JPanel implements ActionListener{
 		// Add Sale
 		if (e.getSource() == addSale) {
 			System.out.println("Add Sale");
-
 			new SaleInput();
 		}
 
