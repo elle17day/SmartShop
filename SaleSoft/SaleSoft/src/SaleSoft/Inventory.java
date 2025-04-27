@@ -1,4 +1,4 @@
-package SaleSoft;
+
 
 public class Inventory {
 	public String name;

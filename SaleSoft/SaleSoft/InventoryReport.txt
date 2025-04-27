@@ -1,0 +1,3 @@
+Name: MilkLow Stock Warning: 5Stock: 20Price: 2.0
+Name: Pepsi_MaxLow Stock Warning: 20Stock: 20Price: 3.5
+Name: Gucci_slidersLow Stock Warning: 2Stock: 10Price: 1000.0
