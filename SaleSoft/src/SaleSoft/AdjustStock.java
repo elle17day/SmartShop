@@ -96,6 +96,7 @@ public class AdjustStock extends JFrame implements ActionListener {
 		}
 		
 		if (e.getSource() == cancel) {
+			System.out.println("Cancel Operation.");
 			this.dispose();
 		}		
 	}

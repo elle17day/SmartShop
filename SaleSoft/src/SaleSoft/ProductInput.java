@@ -99,6 +99,7 @@ public class ProductInput extends JFrame implements ActionListener {
 		}
 		
 		if (e.getSource() == cancel) {
+			System.out.println("Cancel Operation.");
 			this.dispose();
 		}
 	}
