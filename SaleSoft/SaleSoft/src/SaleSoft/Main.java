@@ -16,7 +16,7 @@ public class Main {
 	static ArrayList<Sales> salesList = new ArrayList<Sales>();
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		new FrontGUI();
+		new Front();
 		
 		Inventory item1 = new Inventory("Milk", 20, 5, 2);
 		Inventory item2 = new Inventory("Pepsi_Max", 20, 20, 3.50);
