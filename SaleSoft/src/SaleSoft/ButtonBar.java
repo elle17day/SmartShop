@@ -225,6 +225,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		// Adjust Stock
 		if (e.getSource() == adjustStock) {
 			System.out.println("Adjust Stock");
+			new AdjustStock();
 		}
 		
 		// Inventory Report
