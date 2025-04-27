@@ -215,6 +215,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		// Edit Product
 		if (e.getSource() == editProd) {
 			System.out.println("Edit Product");
+			new EditPrice();
 		}
 
 		// Remove Product

@@ -13,9 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-public class SaleInput extends JFrame implements ActionListener {
-	private static final long serialVersionUID = 7833461570956352203L;
-	
+public class EditPrice extends JFrame implements ActionListener {
+	private static final long serialVersionUID = 6525024168609436880L;
+
 	// Universals:
 	Border frameBorder = BorderFactory.createRaisedBevelBorder();
 	Border altBorder = BorderFactory.createLoweredBevelBorder();
@@ -28,18 +28,18 @@ public class SaleInput extends JFrame implements ActionListener {
 	Color altBG = new Color(0xC0BCBC);
 	Dimension stdButton = new Dimension(260,80);
 	
-	// Buttons
+	// Buttons:
 	JButton submit = new JButton();
 	JButton cancel = new JButton();
-	
+
 	// ComboBox
 	String[] choices = {"Debug1","Debug2"};
 	JComboBox<String> products = new JComboBox<String>(choices);
 	
 	// TextFields
-	JTextField quantity = new JTextField();
+	JTextField newPrice = new JTextField();
 	
-	SaleInput() {
+	EditPrice() {
 		// JFrame Settings
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Input Sale");
@@ -47,52 +47,51 @@ public class SaleInput extends JFrame implements ActionListener {
 		this.setSize(new Dimension(300,280));
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		
-		// Product Text
+			
+		// JLabels
 		JLabel product = new JLabel();
 		product.setText("Product: ");
-		
-		// Quantity text
-		JLabel qtyTxt = new JLabel();
-		qtyTxt.setText("Quantity: ");
-		
-		// Buttons Format
+				
+		JLabel price = new JLabel();
+		price.setText("New Price: ");
+				
+		// Format Buttons
 		submit.setText("Submit");
 		submit.addActionListener(this);
-		
+				
 		cancel.setText("Cancel");
 		cancel.addActionListener(this);
-		
-		// Reformat input
+				
+		// Format Inputs
 		products.setPreferredSize(new Dimension(100,20));
-		quantity.setPreferredSize(new Dimension(20,20));
-		quantity.setText("0");
-		
-		// Final
+		newPrice.setPreferredSize(new Dimension(40,20));
+				
+		//Final
 		this.add(product);
 		this.add(products);
-		this.add(qtyTxt);
-		this.add(quantity);
+		this.add(price);
+		this.add(newPrice);
 		this.add(submit);
 		this.add(cancel);
 		this.setVisible(true);
 		this.pack();
-		
 	}
-
+	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submit) {
 			// Function goes here
 			String prodSel = (String) products.getSelectedItem(); // Debug
-			System.out.println("Product: " + prodSel + "\nQuantiy: " + quantity.getText()); // Debug
+			System.out.println("Product: " + prodSel + "\nNew Price: " + newPrice.getText()); // Debug
 			this.dispose();
 		}
 		
 		if (e.getSource() == cancel) {
 			System.out.println("Cancel Operation.");
 			this.dispose();
-		}
+		}		
 		
 	}
 	
