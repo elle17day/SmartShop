@@ -9,7 +9,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
-import javax.swing.JFrame;
 import javax.swing.border.Border;
 
 public class ContentWindow extends JPanel{
@@ -29,7 +28,7 @@ public class ContentWindow extends JPanel{
 	
 	// Debug Table Values:
 	String[] salesCols = {"Sale 1","Sale 2","Sale 3","Sale 4"};
-	String[] prodsCols = {"Prod 1","Prod 2","Prod 3","Prod 4"};
+	String[] prodsCols = {"Product","Stock","Restock @","Price"};
 	Object [][] debugSales = {
 			{"Prod1","Price1","Date1","Time1"},
 			{"Prod2","Price2","Date2","Time2"},
@@ -47,7 +46,6 @@ public class ContentWindow extends JPanel{
 		this.setBackground(altBG);
 		this.setLayout(new FlowLayout());
 		this.setBorder(altBorder);
-	
 	}
 	
 	public void saleTable() {
@@ -57,7 +55,6 @@ public class ContentWindow extends JPanel{
 		JScrollPane scroll = new JScrollPane(sales);
 		this.add(scroll);
 		this.refresh();
-		
 	}
 	
 	public void prodTable() {
