@@ -43,7 +43,7 @@ public class AdjustStock extends JFrame implements ActionListener {
 	AdjustStock() {
 		// JFrame Settings
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setTitle("Input Sale");
+		this.setTitle("Edit Stock");
 		this.setLayout(new FlowLayout());
 		this.setSize(new Dimension(300,280));
 		this.setResizable(false);

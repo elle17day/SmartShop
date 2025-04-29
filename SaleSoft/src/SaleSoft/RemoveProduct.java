@@ -38,7 +38,7 @@ public class RemoveProduct extends JFrame implements ActionListener {
 	RemoveProduct() {
 		// JFrame Settings
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setTitle("Input Sale");
+		this.setTitle("Remove Product");
 		this.setLayout(new FlowLayout());
 		this.setSize(new Dimension(300,280));
 		this.setResizable(false);

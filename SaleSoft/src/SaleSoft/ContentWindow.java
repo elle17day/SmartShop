@@ -7,6 +7,9 @@ import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.JFrame;
 import javax.swing.border.Border;
 
 public class ContentWindow extends JPanel{
@@ -24,12 +27,51 @@ public class ContentWindow extends JPanel{
 	Color altBG = new Color(0xC0BCBC);
 	Dimension stdButton = new Dimension(260,80);
 	
+	// Debug Table Values:
+	String[] salesCols = {"Sale 1","Sale 2","Sale 3","Sale 4"};
+	String[] prodsCols = {"Prod 1","Prod 2","Prod 3","Prod 4"};
+	Object [][] debugSales = {
+			{"Prod1","Price1","Date1","Time1"},
+			{"Prod2","Price2","Date2","Time2"},
+			{"Prod3","Price3","Date3","Time3"}
+	};
+	Object [][] debugProds = {
+			{"Prod4","Price4","Date4","Time4"},
+			{"Prod5","Price5","Date5","Time5"},
+			{"Prod6","Price6","Date6","Time6"}
+	};
+	
 	ContentWindow() {
 		// Panel for holding Sheets
 		this.setPreferredSize(new Dimension(860,740));
 		this.setBackground(altBG);
 		this.setLayout(new FlowLayout());
 		this.setBorder(altBorder);
+	
+	}
+	
+	public void saleTable() {
+		this.removeAll();
+		// this.setBackground(Color.black); // debug
+		JTable sales = new JTable(debugSales,salesCols);
+		JScrollPane scroll = new JScrollPane(sales);
+		this.add(scroll);
+		this.refresh();
+		
+	}
+	
+	public void prodTable() {
+		this.removeAll();
+		// this.setBackground(Color.blue); // debug
+		JTable prods = new JTable(debugProds,prodsCols);
+		JScrollPane scroll = new JScrollPane(prods);
+		this.add(scroll);
+		this.refresh();
+	}
+
+	private void refresh() {
+		this.repaint();
+		this.revalidate();
 	}
 
 }

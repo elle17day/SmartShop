@@ -183,6 +183,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 			this.add(adjustStock);
 			this.add(invReport);
 			this.add(defSales);
+			Front.content.prodTable();
 			refresh();
 		}
 		
@@ -196,6 +197,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 			this.add(undoLast);
 			this.add(salesReport);
 			this.add(defInventory);
+			Front.content.saleTable();
 			refresh();
 		}
 		
