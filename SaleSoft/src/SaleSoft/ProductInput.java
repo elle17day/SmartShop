@@ -40,7 +40,7 @@ public class ProductInput extends JFrame implements ActionListener {
 	ProductInput() {
 		// JFrame Settings
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setTitle("Input Sale");
+		this.setTitle("Add Product");
 		this.setLayout(new FlowLayout());
 		this.setSize(new Dimension(300,280));
 		this.setResizable(false);
