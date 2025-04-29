@@ -33,16 +33,16 @@ public class EditPrice extends JFrame implements ActionListener {
 	JButton cancel = new JButton();
 
 	// ComboBox
-	String[] choices = {"Debug1","Debug2"};
-	JComboBox<String> products = new JComboBox<String>(choices);
+	String[] debugChoices = {"Debug1","Debug2"};
+	JComboBox products = new JComboBox(Main.inventoryList.toArray());
 	
 	// TextFields
 	JTextField newPrice = new JTextField();
 	
 	EditPrice() {
 		// JFrame Settings
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setTitle("Edit Product");
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setTitle("Input Sale");
 		this.setLayout(new FlowLayout());
 		this.setSize(new Dimension(300,280));
 		this.setResizable(false);
@@ -82,12 +82,12 @@ public class EditPrice extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submit) {
-			// Function goes here
 			String prodSel = (String) products.getSelectedItem(); // Debug
+			Main.editProduct(prodSel, Double.parseDouble(newPrice.getText()));
 			System.out.println("Product: " + prodSel + "\nNew Price: " + newPrice.getText()); // Debug
 			this.dispose();
 		}
-		
+	
 		if (e.getSource() == cancel) {
 			System.out.println("Cancel Operation.");
 			this.dispose();

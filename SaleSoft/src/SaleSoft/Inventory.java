@@ -14,7 +14,7 @@ public class Inventory {
 	}
 	
 	public String toString() {
-		return "Name: " + name + "Low Stock Warning: " + lowStockWarning + "Stock: " + stock + "Price: " + price ;	
+		return name ;
 	}
 	
 	public String getName() {
