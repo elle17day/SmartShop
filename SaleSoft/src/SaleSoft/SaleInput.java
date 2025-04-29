@@ -41,7 +41,7 @@ public class SaleInput extends JFrame implements ActionListener {
 	
 	SaleInput() {
 		// JFrame Settings
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setTitle("Input Sale");
 		this.setLayout(new FlowLayout());
 		this.setSize(new Dimension(300,280));
