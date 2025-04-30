@@ -83,8 +83,8 @@ public class SaleInput extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submit) {
-			// Function goes here
 			String prodSel = (String) products.getSelectedItem(); // Debug
+			Main.addSale(prodSel, Integer.parseInt(quantity.getText()), 300425, 1407);
 			System.out.println("Product: " + prodSel + "\nQuantiy: " + quantity.getText()); // Debug
 			this.dispose();
 		}

@@ -90,7 +90,8 @@ public class AdjustStock extends JFrame implements ActionListener {
 		if (e.getSource() == submit) {
 			// Function goes here
 			String prodSel = (String) products.getSelectedItem(); // Debug
-			System.out.println("Product: " + prodSel + "\nNew Stock: " + newStock.getText() +
+			Main.adjustStock(prodSel, Integer.parseInt(newStock.getText()), Integer.parseInt(newWarning.getText()));
+			System.out.println("Product: " + prodSel + "\nNew Stock: " + newStock.getText() + 
 			"\nNew Warning: " + newWarning.getText()); // Debug
 			this.dispose();
 		}
