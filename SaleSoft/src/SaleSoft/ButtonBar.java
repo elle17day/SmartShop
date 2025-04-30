@@ -236,6 +236,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		if (e.getSource() == invReport) {
 			System.out.println("Inventory Report");
 			Report.inventoryReport();
+			new reportFeedback();
 		}
 		
 		//						####
@@ -260,6 +261,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		if (e.getSource() == salesReport) {
 			System.out.println("Sales Report");
 			Report.salesReport();
+			new reportFeedback();
 		}
 		
 		//						####
