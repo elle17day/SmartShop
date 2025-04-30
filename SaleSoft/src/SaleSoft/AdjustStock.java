@@ -33,8 +33,7 @@ public class AdjustStock extends JFrame implements ActionListener {
 	JButton cancel = new JButton();
 
 	// ComboBox
-	String[] choices = {"Debug1","Debug2"};
-	JComboBox<String> products = new JComboBox<String>(choices);
+	JComboBox products = new JComboBox(Main.inventoryList.toArray());
 	
 	// TextFields
 	JTextField newStock = new JTextField();

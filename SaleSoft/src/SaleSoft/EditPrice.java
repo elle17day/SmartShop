@@ -33,7 +33,6 @@ public class EditPrice extends JFrame implements ActionListener {
 	JButton cancel = new JButton();
 
 	// ComboBox
-	String[] debugChoices = {"Debug1","Debug2"};
 	JComboBox products = new JComboBox(Main.inventoryList.toArray());
 	
 	// TextFields
