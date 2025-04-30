@@ -92,7 +92,7 @@ public class ProductInput extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submit) {
-			// Function goes here
+			Main.addProduct(prodName.getText(), Integer.parseInt(prodStock.getText()), Integer.parseInt(prodLowStock.getText()), Double.parseDouble(prodPrice.getText()));
 			System.out.println("Product: " + prodName.getText() + "\nPrice: " + prodPrice.getText() +
 			"\nCurrent Stock: " + prodStock.getText() + "\nLow Stock: " + prodLowStock.getText()); // Debug
 			this.dispose();

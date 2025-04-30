@@ -35,59 +35,11 @@ public class Main {
 		salesList.add(sale2);
 		salesList.add(sale3);
 		
-		inventoryReport();
-		salesReport();
+		Report.inventoryReport();
+		Report.salesReport();
 	}
 	
-	public static void inventoryReport() {
-		try {
-			File inventoryReport = new File("InventoryReport.csv");
-			PrintWriter csvWriter = new PrintWriter(inventoryReport);
-			
-			// Creating headers within CSV file
-			csvWriter.printf("%s, %s, %s, %s\n\n", "Item name", "Stock", "Low Stock Warning", "Price");
-			
-			// Loop the array to put the elements in the CSV
-			for (Inventory item : inventoryList) {
-				
-				// sets the data types and format they are entered into the CSV file
-				// Then inputs them into the CSV
-				csvWriter.printf("%s, %d, %d, %f\n", item.getName(), item.getStock(), item.getLowStock(), item.getPrice());
-			}
-			
-			// Closes the CSV writer
-			csvWriter.close();
-			
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void salesReport() {
-		try {
-			File salesReport = new File("SalesReport.csv");
-			PrintWriter csvWriter = new PrintWriter(salesReport);
-			
-			// Creating headers within CSV file
-			csvWriter.printf("%s, %s, %s, %s, %s, %s\n\n", "Item name", "Price", "Quantity Sold", "Total Cost", "Date", "Time");
-			
-			// Loop the array to put the elements in the CSV
-			for (Sales item : salesList) {
-				
-				// sets the data types and format they are entered into the CSV file
-				// Then inputs them into the CSV
-				csvWriter.printf("%s, %d, %d, %f\n", item.getName(), item.getPrice(), item.getQtySold(), item.getTotCost(), item.getDate(), item.getTime());
-			}
-			
-			// Closes the CSV writer
-			csvWriter.close();
-			
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void addStock(String n, int s) throws FileNotFoundException {
+	public static void adjustStock(String n, int s, int lsw) {
 		try {
 			
 			// Loops through the arraylist 
@@ -97,10 +49,12 @@ public class Main {
 				if (inven1.name.trim().equals(n)) {
 					
 					// Adds the inpiut value to the stock level and overwrited the stored value
-					inven1.stock = (inven1.stock + s);
+					inven1.stock = s;
+					inven1.lowStockWarning = lsw;
 				} else {
 					// Incase the name input is wrong
 				}
+				Report.inventoryReport();
 			}
 			
 			// Catches general errors such as type errors.
@@ -110,44 +64,18 @@ public class Main {
 			// If an error occurs that is unexpected, the program will close.
 		} finally {
 			System.out.println("Critical error occured with user input, saving data and closing program");
+			Report.inventoryReport();
 			System.exit(0);
 		}
 	}
 	
-	public void removeStock(String n, int s) throws FileNotFoundException {
-		try {
-			
-			// Loop through the arraylist
-			for (Inventory inven2 : inventoryList) {
-				
-				// Check the names of the producst by the users input
-				if (inven2.name.trim().equals(n)) {
-					
-					// Set the stock level to the previous stock level - the users input
-					inven2.stock = (inven2.stock - s);
-				}
-				
-				else {
-					// Input error dialog here
-				}
-			} 
-		} catch(Error e) {
-			e.printStackTrace();
-			
-			// If an error occurs that is unexpected, the program will close.
-		} finally {
-			System.out.println("Critical error occured with user input, saving data and closing program");
-			System.exit(0);
-		
-		}
-	}
-	
-	public void addProduct(String n, Integer s, Integer lSW, Double p) {
+	public static void addProduct(String n, Integer s, Integer lSW, Double p) {
 		try {
 			
 			if ((n != null) && (s != null) && (lSW != null) && (p != null)) {
 				// Takes input values and put them into a new inventory object
 				Inventory item4 = new Inventory(n, s, lSW, p);
+				
 			} else {
 				System.out.println("Error, Please ensure to enter data into all areas");
 			}
@@ -155,6 +83,7 @@ public class Main {
 			e.printStackTrace();
 		} finally {
 			System.out.println("Critical error occured with user input, saving data and closing program");
+			Report.inventoryReport();
 			System.exit(0);
 		}
 	} 
@@ -179,11 +108,30 @@ public class Main {
 			e.printStackTrace();
 		} finally {
 			System.out.println("Critical error occured with user input, saving data and closing program");
+			Report.inventoryReport();
 			System.exit(0);
 		}
 	}
 	
-	public void addSale(String n, Integer q, Integer d, Integer t) {
+	public static void removeProduct(String s) {
+		try {
+			if (s != null) {
+				for (Inventory inven1 : inventoryList) {
+					if (inven1.name.trim().equals(s)) {
+						inventoryList.remove(inven1);
+					}
+				}
+			}
+		} catch(Error e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("Critical error occured with user input, saving data and closing program");
+			Report.inventoryReport();
+			System.exit(0);
+		}
+	}
+	
+	public static void addSale(String n, Integer q, Integer d, Integer t) {
 		try {
 			// Checking that data is input
 			if ((n != null) && (q != null) && (d != null) && (t != null)) {
@@ -208,8 +156,31 @@ public class Main {
 			// If an error occurs that is unexpected, the program will close.
 		} finally {
 			System.out.println("Critical error occured with user input, saving data and closing program");
+			Report.salesReport();
 			System.exit(0);
-		
 		}
 	}
+	
+	public static void undoSale() {
+		try {
+			// Measure the length of the arraylist
+			int index = salesList.size() - 1;
+			
+			// If there is extra data aside from the default values
+			if (index > 3) {
+				
+				// Remove the most recent sale from the arraylist
+				salesList.remove(index); 
+			}
+			
+		} catch(Error e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("Critical error occured with user input, saving data and closing program");
+			Report.salesReport();
+			System.exit(0);
+		}
+	}
+	
+	
 }

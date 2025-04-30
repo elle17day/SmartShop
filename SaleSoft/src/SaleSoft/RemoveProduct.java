@@ -72,6 +72,7 @@ public class RemoveProduct extends JFrame implements ActionListener {
 		if (e.getSource() == submit) {
 			// Function goes here
 			String prodSel = (String) products.getSelectedItem(); // Debug
+			Main.removeProduct(prodSel);
 			System.out.println("Product: " + prodSel + " removed."); // Debug
 			this.dispose();
 		}

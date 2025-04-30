@@ -252,6 +252,7 @@ public class ButtonBar extends JPanel implements ActionListener{
 		// Undo Last Sale
 		if (e.getSource() == undoLast) {
 			System.out.println("Undo Sale");
+			Main.undoSale();
 		}
 
 		// Sales Report
