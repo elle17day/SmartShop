@@ -20,3 +20,18 @@ Sales Features:
     - navigate to the sales menu, click the "Undo Last Sale" button, read the feedback form and close it, the laast sale has been removed
   - Generating an Sales Report:
     - Navigate to the Sales tab, click the "Generate Report" button, read and close the feedback box, open the SalesReport.csv file in your file system
+
+Java Version : 
+  - Java Runtime Version = 21.0.5+11-LTS
+
+Required Libraries :
+  - Java Swing
+  - Java AWT
+  - Java IO
+
+Key Features Added :
+  - Ability to add/remove/edit products stored in the inventory
+  - Ability to add/undo a sale
+  - Ability to generate a CSV file of the stores inventory and sales
+  - Navigation between multiple menus
+  - Feedback windows to provide ease of use for the user
